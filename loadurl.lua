@@ -3,6 +3,6 @@ getgenv().loadurl = function(url, opt)
 	if opt then
 		loadstring(http(url))(opt)
 	else
-		loadstring(http(url))(opt)
+		loadstring(http(url))()
 	end
 end
