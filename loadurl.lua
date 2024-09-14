@@ -1,7 +1,8 @@
-local cloneref = (cloneref or function(...) return ... end)
-
 local http = function(url) return game:HttpGet(url) end
-local loadstr = (loadstring or function(...) ...() end)
-getgenv().loadurl = function(url)
-	loadstr(http(url))()
+getgenv().loadurl = function(url, opt)
+	if opt then
+		loadstring(http(url))(opt)
+	else
+		loadstring(http(url))(opt)
+	end
 end
